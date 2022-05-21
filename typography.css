@@ -1,0 +1,18 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title h1{
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.description p{
+    font-size: 15px;
+}
+
+.error{
+    color: red;
+    font-size: 15px;
+    position: absolute;
+}

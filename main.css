@@ -1,0 +1,87 @@
+.wordinput{
+    border: none;
+    border-bottom: solid 2px black;
+    width: 55%;
+    transition: all ease-in-out .5s;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.wordinput.focused{
+    outline: none !important;
+    width: 100%;
+    transition: all ease-in-out .5s;
+}
+
+.wordinput:focus{
+    outline: none !important;
+    width: 100%;
+    transition: all ease-in-out .5s;
+}
+
+
+.disabled-count-button, .disabled-clear-button{
+    padding: .5rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #808080;
+    background-color: white;
+    border: solid 2px #808080;
+    transition: all ease-in-out .15s;
+    cursor: not-allowed;
+    width: 100px;
+    margin: 0 .5rem;
+}
+
+.count-button, .clear-button{
+    padding: .5rem 2rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: white;
+    border: solid 2px black;
+    transition: all ease-in-out .15s;
+}
+
+.count-button:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: all ease-in-out .15s;
+}
+
+.letterbox{
+    background-color: black;
+    color: white;
+    padding: 1rem .25rem .25rem .25rem;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin: 0 .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.countbox{
+    background-color: white;
+    color: black;
+    padding: .5rem 2rem;
+    font-size: 20px;
+    border-radius: 1px;
+    margin: .5rem 0 0 0;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

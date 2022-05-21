@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Externall CSS -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="structure.css">
+    <link rel="stylesheet" href="typography.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Task 1</title>
+</head>
+<body>
+    <div class="title centralize">
+        <h1>Task #1 | Letter Counter</h1>
+    </div>
+    <div class="description centralize">
+        <p>ready to see some magic today?</p>
+    </div>
+    <div class="centralize mt-5 input-container">
+        <input type="text" name="Word" id="word" class="wordinput" onchange="toggleInputClass()">
+        <p class="error hidden" id="errorWarning">Enter the word you want me to do the magic first!</p>
+        <p class="error hidden" id="clearWarning">What do you expect me to clear?</p>
+    </div>
+    <div class="centralize mt-3">
+        <button class="disabled-clear-button" id="disabledClearButton" onclick="nullClearWarn()">Clear</button>
+        <button class="clear-button hidden" id="clear-button" onclick="clear()">Clear</button>
+
+        <button class="disabled-count-button" id="disabledCountButton" onclick="nullInputWarn()">Count!</button>
+        <button class="count-button hidden" id="countButton" onclick="count()">Count!</button>
+    </div>
+    <div class="centralize mt-5">
+        <div class="letter-container" id="letterContainer">
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleInputClass() {
+
+            var input           = document.getElementsByName("Word")[0];
+            var disabledButton  = document.getElementById("disabledCountButton");
+            var button          = document.getElementById("countButton")
+
+            if (input.value.length > 0) {
+
+                input.classList.add('focused');
+                disabledButton.classList.add("hidden");
+                button.classList.remove("hidden");
+
+            } else {
+
+                input.classList.remove('focused');
+                disabledButton.classList.remove("hidden");
+                button.classList.add("hidden");
+
+            }
+
+        }
+
+        function count() {
+
+            var word     = document.getElementsByName("Word")[0].value;
+            var letter   = [];
+            var keyCount = [];
+
+            let charMap  = new Map();
+            const count  = 0;
+
+            for (const key of word) {
+                charMap.set(key,count);
+            }
+
+            for (const key of word) {
+                let count = charMap.get(key);
+                charMap.set(key, count + 1);
+            }
+
+            for (const [key,value] of charMap) {
+                letter[key]     = key;
+                keyCount[value] = value;
+
+                const occurenceParent = document.createElement("div");
+                occurenceParent.classList.add("occurence-parent");
+                occurenceParent.id = "occurenceParent"
+
+                const letterBox = document.createElement("div");
+                letterBox.classList.add("letterbox");
+                letterBox.id = "letterBox";
+                letterBox.innerHTML = key;
+
+                const countBox = document.createElement("div");
+                countBox.classList.add("countbox");
+                countBox.innerHTML = value;
+
+                document.getElementById("letterContainer").appendChild(occurenceParent);
+                occurenceParent.appendChild(letterBox);
+                letterBox.appendChild(countBox);
+            }
+
+        }
+
+        function nullInputWarn() {
+
+            document.getElementById("errorWarning").classList.toggle("hidden");
+
+        }
+
+        function nullClearWarn() {
+
+            document.getElementById("clearWarning").classList.toggle("hidden");
+
+        }
+    </script>
+
+</body>
+</html>
