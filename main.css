@@ -44,9 +44,10 @@
     background-color: white;
     border: solid 2px black;
     transition: all ease-in-out .15s;
+    margin: 0 .5rem;
 }
 
-.count-button:hover{
+.count-button:hover, .clear-button:hover{
     color: white;
     background-color: black;
     cursor: pointer;
@@ -83,5 +84,4 @@
 .input-container{
     display: flex;
     flex-direction: column;
-    position: relative;
 }
